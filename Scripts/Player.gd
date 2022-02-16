@@ -16,15 +16,17 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("move_right"):
 		movimento.x = max_vel
+		get_node("Sprite_texture").flip_h = false
 		if is_on_floor():
 			get_node("Sprite_texture").animation = "andar"
-			get_node("Sprite_texture").flip_h = false
+			
 		
 	elif Input.is_action_pressed("move_left"):
 		movimento.x = -max_vel
+		get_node("Sprite_texture").flip_h = true
 		if is_on_floor():
 			get_node("Sprite_texture").animation = "andar"
-			get_node("Sprite_texture").flip_h = true
+			
 	
 	else:
 		movimento.x = 0
