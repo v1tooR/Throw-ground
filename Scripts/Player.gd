@@ -34,8 +34,9 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			movimento.y = -forca_pulo
-			get_node("Sprite_texture").animation = "pular"
-			if movimento.y >= forca_pulo:
+			if movimento.y < 0:
+				get_node("Sprite_texture").animation = "pular"
+			if movimento.y > 0:
 				get_node("Sprite_texture").animation = "Cair"
 	
 
