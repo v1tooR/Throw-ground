@@ -1,36 +1,41 @@
 extends KinematicBody2D
 
-var velocity = Vector2.ZERO
-var move_speed = 100
-var gravity = 1200
-var jump_force = -720
-var is_grounded
-onready var raycasts = $Raycasts
+const Cima = Vector2(0,-1)
+const gravidade = 40
+const Max_vel_queda = 200
+const max_vel = 150
+const forca_pulo = 500
+var movimento = Vector2()
 
-func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
+func _physics_process(delta):
+	movimento = move_and_slide(movimento,Cima)
+	movimento.y += gravidade
 	
-	_get_input()
+	if movimento.y > Max_vel_queda:
+		movimento.y = Max_vel_queda
 	
-	velocity = move_and_slide(velocity)
+	if Input.is_action_pressed("move_right"):
+		movimento.x = max_vel
+		if is_on_floor():
+			get_node("Sprite_texture").animation = "andar"
+			get_node("Sprite_texture").flip_h = false
+		
+	elif Input.is_action_pressed("move_left"):
+		movimento.x = -max_vel
+		if is_on_floor():
+			get_node("Sprite_texture").animation = "andar"
+			get_node("Sprite_texture").flip_h = true
 	
-	is_grounded = _check_is_ground()
+	else:
+		movimento.x = 0
+		if is_on_floor():
+			get_node("Sprite_texture").animation = "default"
 	
-func _get_input():
+	if is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			movimento.y = -forca_pulo
+			get_node("Sprite_texture").animation = "pular"
+			if movimento.y >= forca_pulo:
+				get_node("Sprite_texture").animation = "Cair"
 	
-	var move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
-	velocity.x = move_speed * move_direction
-	
-	if move_direction !=0:
-		scale.x = move_direction
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump") and is_grounded:
-		velocity.y = jump_force /2
-
-func _check_is_ground():
-	for raycast in raycasts.get_children():
-		if raycast.is_colliding():
-			return true
-			
-	return false
