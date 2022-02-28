@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throw Ground</title>
+    <link rel="stylesheet" href="style.css"> <!-- Arquivo CSS -->
+    <script src="./js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontes utilizadas na home -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets_site/"> <!-- Ícone da aba do navegador -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" href="./assets_site/senai-ico.png">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<!--Header-->
+<section class="Header-section">
+    
+<header class="menu-top" id="menu-top">
+    <div class="header-1" id= "myHeader">
+        <div class="logo">
+            <img src="./assets_site/Throw-Ground-logo.png" alt="LOGO Game"> <!-- Logotipo -->
+        </div>
+           <nav class="menu-bar">
+               <ul>
+                   <li>
+                        <a href="#Sobre"> <!-- ir para tag categorias -->
+                            Sobre
+                        </a>
+                   </li>
+                   <li>
+                        <a href="#game!"> <!-- ir para tag categorias -->
+                            Game!
+                        </a>
+                    </li>
+               </ul>
+           </nav>
+</section>
+    <!-- apresentacao site-->
+    <div class="inicio">
+        <h1 class="title"><span>THROW GROUND!</span></h1>
+        <h1 id="Sobre">O que é?</h1>
+        <p style="margin-bottom: 30px; font-size: 20px;">O game tem o intuito de divertir pessoas que amam esse mundo dos jogos! Tendo como principal plataforma os computadores!</p>
+    </div>
+    <!-- SlidesShow-->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="./assets_site/tg1.jpg" style="width:100%" class="slide_img">
+          <div class="text">Game preview</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="./assets_site/tg2.jpg" style="width:100%" class="slide_img">
+          <div class="text">Game preview</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="./assets_site/Tg_black_logo.png" style="width:100%" class="slide_img">
+          <div class="text">Game preview</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+
+    <!-- apresentacao apps-->
+    <section class="apps" id="game!">
+        <div class="about-app">
+            <img src="assets_site/Tg_black_logo.png"/>
+            <div class="text-app">
+                <h2>Jogue agora!</h2>
+                <p>
+                   Nosso jogo está na versão 1.0! Experimente! 
+                </p>
+                <input type="button" class="button button2" value="Baixar"/>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<div class="footer-div">
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <img src="./assets_site/Throw-Ground-logo.png" width="12%">
+                <h3>Throw<span> Ground</span></h3>
+                <p class="footer-links">
+                    <a href="#menu-top">Início</a>
+                    |
+                    <a href="#sobre">Sobre</a>
+                    |
+                    <a href="#categorias">Game</a>
+                </p> 
+                <a href="https://taubate.sp.senai.br/" style="text-decoration: none;">
+                    <p class="footer-company-name">©Senai Taubaté Félix Guisard</p>
+                </a>
+            </div>
+            
+            <div class="footer-right">
+                <!-- Sobre nós -->
+                <p class="footer-company-about">
+                    <span>Sobre nós</span>
+                    Nós acreditamos que a criatividade capacita a transformação, pessoalmente e profissionalmente em todos os setores. Buscamos bons resultados, não somente pessoais, mas como um todo.<br>
+                    <br>Site desenvolvido por @v1tooR(Github)
+                </p>
+                <!-- Redes Sociais -->
+                <div class="footer-icons">
+                    <a href="https://pt-br.facebook.com/senaitaubate/"><img src="./assets_site/004-facebook.png"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/senai_taubate"><img src="./assets_site/003-twitter.png"><i class="fa fa-twitter"></i></a>
+                    <a href="https://instagram.com/senaitaubate"><img src="./assets_site/002-instagram.png"><i class="fa fa-instagram"></i></a>
+                    <a href="https://br.linkedin.com/company/escolasenaitaubate"><img src="./assets_site/001-linkedin.png"><i class="fa fa-linkedin"></i></a>
+                    
+                </div> 
+
+            </div>
+        </footer>
+    </footer>
+</div>
+</body>
+</html>
