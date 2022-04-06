@@ -3,7 +3,7 @@ extends KinematicBody2D
 const Cima = Vector2(0,-1)
 const gravidade = 40
 const Max_vel_queda = 200
-const max_vel = 150
+const max_vel = 120
 const forca_pulo = 500
 var movimento = Vector2()
 
