@@ -1241,7 +1241,15 @@ position = Vector2( 4, 1 )
 shape = SubResource( 58 )
 
 [node name="coletavel" parent="FallZone" instance=ExtResource( 5 )]
-position = Vector2( -456, -176 )
+position = Vector2( -447, -176 )
+collision_layer = 4
+
+[node name="coletavel2" parent="FallZone" instance=ExtResource( 5 )]
+position = Vector2( -405, -176 )
+collision_layer = 4
+
+[node name="coletavel3" parent="FallZone" instance=ExtResource( 5 )]
+position = Vector2( -364, -176 )
 collision_layer = 4
 
 [connection signal="body_entered" from="FallZone" to="FallZone" method="_on_FallZone_body_entered"]
