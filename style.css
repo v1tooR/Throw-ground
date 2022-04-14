@@ -645,3 +645,20 @@ footer{
 .inicio h1 {
     margin: 50px;
 }
+
+.download{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    background-color: #222222;
+    padding: 1vh;
+    border-radius: 1vh;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.download:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
