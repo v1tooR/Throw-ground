@@ -4,7 +4,7 @@ var UP = Vector2.UP
 var velocity = Vector2.ZERO
 var move_speed = 480
 var gravity = 1200
-var jump_force = -720
+var jump_force = -820
 var is_grounded
 
 #var player_health = 3
@@ -53,10 +53,6 @@ func _physics_process(delta: float) -> void:
 	
 	is_grounded = _check_is_ground()
 	
-	if is_grounded:
-		$Shadow.visible = true
-	else:
-		$Shadow.visible = false
 	
 	_set_animation()
 	
@@ -72,7 +68,6 @@ func _get_input():
 	
 	if move_direction != 0:
 		$texture.scale.x = move_direction
-		$steps_fx.scale.x = move_direction
 		
 	if velocity.x > 1:
 		$pushRight.set_enabled(true)
@@ -102,8 +97,6 @@ func _set_animation():
 		anim = "jump"
 	elif velocity.x != 0 or is_pushing:
 		anim = "run"
-		if is_grounded:
-			$steps_fx.set_emitting(true)
 					
 	if velocity.y > 0 and !is_grounded:
 		anim = "fall"	
